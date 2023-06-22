@@ -10,7 +10,7 @@ class MqttPlugin(plugins.Plugin):
 
     __author__ = 'mavotronik'
     __version__ = '1.0.0'
-    __license__ = 'GPL3'
+    __license__ = 'MIT'
     __description__ = 'A plugin that sends info about your pwnagotchi to mqtt'
 
     def __init__(self):
