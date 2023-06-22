@@ -11,13 +11,13 @@ class MqttPlugin(plugins.Plugin):
     __author__ = 'mavotronik'
     __version__ = '1.0.0'
     __license__ = 'MIT'
-    __description__ = 'A plugin that sends info about your pwnagotchi to mqtt'
+    __description__ = 'A plugin that sends info about your pwnagotchi to MQTT'
 
     def __init__(self):
-        self.options = {
-        'host': 'localhost',
-        'topic': 'pwnagotchi'
-        }
+#        self.options = {
+#        'host': 'localhost',
+#        'topic': 'pwnagotchi'
+#        }
         
         super().__init__()
         self.client = mqtt.Client()
@@ -37,15 +37,15 @@ class MqttPlugin(plugins.Plugin):
 
 
     def on_stats_update(self, stats):
-        logging.info("MqttPlugin: stats updated")
+        logging.info("MQTT Plugin: stats updated")
 
     def on_loaded(self):
-        logging.info("MqttPlugin: loaded")
+        logging.info("MQTT Plugin: loaded")
         ui.set('face', '(✜‿‿✜)')
         ui.set('status', 'MQTT is ready!')
 
     def on_unloaded(self):
-        logging.info("MqttPlugin: unloaded")
+        logging.info("MQTT Plugin: unloaded")
         
 #    def mqtt_publish(self):
 #        self.client.publish("pwnagotchi/mem", f"{mem}")
