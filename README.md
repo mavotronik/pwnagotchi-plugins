@@ -9,3 +9,4 @@ If you have not set up a directory for custom plugins, create the directory and 
 
 # Plugins
 - MQTT Plugin
+- memtemp_adv
