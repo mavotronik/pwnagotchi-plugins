@@ -8,7 +8,7 @@ import paho.mqtt.client as mqtt
 
 class MqttPlugin(plugins.Plugin):
 
-    __author__ = 'mavotronik'
+    __author__ = 'https://github.com/mavotronik/pwnagotchi-plugins'
     __version__ = '1.0.0'
     __license__ = 'MIT'
     __description__ = 'A plugin that sends info about your pwnagotchi to MQTT'
