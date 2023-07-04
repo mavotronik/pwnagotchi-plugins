@@ -1,10 +1,10 @@
 # Plugin Setup
-- If you have not set up a directory for custom plugins, create the directory and add its path to your config.toml.
+1. If you have not set up a directory for custom plugins, create the directory and add its path to your config.toml.
 `main.custom_plugins = "/usr/local/share/pwnagotchi/custom-plugins/"`
-- Install dependencies
-- Put plugin to your custom folder
-- Edit your config.toml
-- Restart pwnagotchi service
+2. Install dependencies
+3. Put plugin to your custom folder
+4. Edit your config.toml
+5. Restart pwnagotchi service
 
 # Memtemp_adv Plugin
  - Displays CPU, RAM, disk usage, CPU temperature. Support waveshare v3  
