@@ -4,7 +4,6 @@
 `main.custom_plugins = "/usr/local/share/pwnagotchi/custom-plugins/"`
 - Install dependencies
 - Put plugin to your custom folder
-- Edit your config.toml
 - Restart pwnagotchi service
   
 # MQTT Plugin
