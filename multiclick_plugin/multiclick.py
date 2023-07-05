@@ -9,7 +9,7 @@ from gpiozero import Button
 ### USER SETTINGS ###
 gpioPin = 21   # Button conected here
 commands = 4   # Number of commands to execute (will be executed only up to this command)
-hold_tme = 4.0 # time to hold button in seconds
+hld_tme = 4.0  # time to hold button in seconds
 ### USER SETTINGS ###
 
 held_for = 0.0
@@ -47,10 +47,10 @@ class multiclck(plugins.Plugin):
             
     def onheld(self):
         global held_for
-        global hold_tme
+        global hld_tme
         global hold
         held_for = max(held_for, button.held_time + button.hold_time + 1)
-        if (held_for >= hold_tme):
+        if (held_for >= hld_tme):
             hold = True
             logging.info("Multiclck: button hold")
         else:
