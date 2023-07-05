@@ -6,16 +6,15 @@ import json
 import logging
 from gpiozero import Button
 
+### USER SETTINGS ###
+gpioPin = 21   # Button conected here
+commands = 4   # Number of commands to execute (will be executed only up to this command)
+hold_tme = 4.0 # time to hold button in seconds
+### USER SETTINGS ###
+
 held_for = 0.0
 click = 0
 hold = False
-
-gpioPin = 21
-commands = 4
-hold_tme = 4.0
-
-#modeSwitch = 'AUTO'
-#modeNow = 'MANU'
 
 button = Button(gpioPin, hold_time=0.5, hold_repeat=False)
 
@@ -70,8 +69,12 @@ class multiclck(plugins.Plugin):
                 logging.info("Multiclck: 3 mode")
            elif (click == 4):
                 logging.info("Multiclck: 4 mode")
+           elif (click == 5):
+                logging.info("Multiclck: 5 mode")
+           elif (click == 6):
+                logging.info("Multiclck: 6 mode")
            else:
-                logging.info("Multiclck: empty mode")
+                logging.info("Multiclck: no mode")
                 
           
     def on_ui_setup(self, ui):
