@@ -2,7 +2,6 @@ import pwnagotchi.plugins as plugins
 import pwnagotchi.ui as ui
 import pwnagotchi
 import os
-import json
 import logging
 from gpiozero import Button
 
