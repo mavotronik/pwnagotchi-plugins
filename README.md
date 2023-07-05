@@ -1,4 +1,4 @@
-# pwnagotchi-plugins
+# pwnagotchi-plugins develop branch
 custom plugins for pwnagotchi
 
 # Custom Plugins Setup
@@ -12,3 +12,4 @@ custom plugins for pwnagotchi
 # Plugins
 - MQTT Plugin
 - memtemp_adv
+- multiclick
