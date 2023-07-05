@@ -11,7 +11,7 @@ import psutil
 
 class MemTemp(plugins.Plugin):
     __author__ = 'https://github.com/mavotronik/pwnagotchi-plugins'
-    __version__ = '1.0.0'
+    __version__ = '1.1.0'
     __license__ = 'MIT'
     __description__ = 'A plugin that will display memory/cpu/disk usage and temperature'
 
