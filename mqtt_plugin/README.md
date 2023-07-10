@@ -15,6 +15,9 @@
 sudo apt install mosquitto mosquitto-clients && sudo pip3 install paho-mqtt==1.4.0
 ```
 
-# Defaults
-- MQTT host: ``localhost``
-- Topic: ``pwnagotchi``
+# Config.toml
+```
+main.plugins.mqtt_plugin.enabled = true
+main.plugins.mqtt_plugin.host = "localhost"
+main.plugins.mqtt_plugin.topic = "pwnagotchi"
+```
