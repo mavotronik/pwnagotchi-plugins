@@ -9,19 +9,17 @@ import paho.mqtt.client as mqtt
 class MqttPlugin(plugins.Plugin):
 
     __author__ = 'https://github.com/mavotronik/pwnagotchi-plugins'
-    __version__ = '1.0.0'
+    __version__ = '1.0.1'
     __license__ = 'MIT'
     __description__ = 'A plugin that sends info about your pwnagotchi to MQTT'
 
     def __init__(self):
-#        self.options = {
-#        'host': 'localhost',
-#        'topic': 'pwnagotchi'
-#        }
-        
+        host = self.options['host']
+        topic = self.options['topic']
+
         super().__init__()
         self.client = mqtt.Client()
-        self.client.connect("localhost", 1883, 60)
+        self.client.connect(host, 1883, 60)
 
     def on_ui_update(self, ui):
         mem = f"{int(pwnagotchi.mem_usage() * 100)}"
@@ -29,11 +27,11 @@ class MqttPlugin(plugins.Plugin):
         temp = int(open('/sys/class/thermal/thermal_zone0/temp').read()) / 1000
         points = len(os.listdir('/root/handshakes/'))
         
-#        self.mqtt_publish()
-        self.client.publish("pwnagotchi/mem", f"{mem}")
-        self.client.publish("pwnagotchi/cpu_load", f"{cpu_load}")
-        self.client.publish("pwnagotchi/temp", f"{temp}")
-        self.client.publish("pwnagotchi/points", f"{points}")
+
+        self.client.publish(""topic"/mem", f"{mem}")
+        self.client.publish(""topic"/cpu_load", f"{cpu_load}")
+        self.client.publish(""topic"/temp", f"{temp}")
+        self.client.publish(""topic"/points", f"{points}")
 
 
     def on_stats_update(self, stats):
@@ -47,8 +45,3 @@ class MqttPlugin(plugins.Plugin):
     def on_unloaded(self):
         logging.info("MQTT Plugin: unloaded")
         
-#    def mqtt_publish(self):
-#        self.client.publish("pwnagotchi/mem", f"{mem}")
-#        self.client.publish("pwnagotchi/cpu_load", f"{cpu_load}")
-#        self.client.publish("pwnagotchi/temp", f"{temp}")
-#        self.client.publish("pwnagotchi/points", f"{points}")
