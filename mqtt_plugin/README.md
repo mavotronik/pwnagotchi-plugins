@@ -8,7 +8,7 @@
   
 # MQTT Plugin
  - Sends info about your Pwnagotchi to local MQTT broker. 
- - Tested on 1.5.5 official version.
+ - Testing on 1.5.5 official version.
 
 # Dependencies
 ```
