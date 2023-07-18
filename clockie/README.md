@@ -6,7 +6,7 @@
 3. Put plugin to your custom folder
 4. Restart pwnagotchi service
   
-# MQTT Plugin
+# Clockie
  - Displays time, date and info from mqtt topics . 
  - Testing on 1.5.5 official version.
 
