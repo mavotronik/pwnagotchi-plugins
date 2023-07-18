@@ -12,4 +12,4 @@ custom plugins for pwnagotchi
 # Plugins
 - MQTT Plugin
 - memtemp_adv
-- multiclick
+- clockie
