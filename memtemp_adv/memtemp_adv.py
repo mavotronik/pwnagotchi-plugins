@@ -31,14 +31,16 @@ class MemTemp(plugins.Plugin):
         logging.info("memtemp_adv: plugin loaded.")
 
     def mem_usage(self):
-        return f"{int(pwnagotchi.mem_usage() * 100)}%"
+        mem = psutil.virtual_memory()
+        return f"{(int(mem.percent))}%"
         
     def disk_usage(self):
         disk_ = psutil.disk_usage('/')
         return f"{(int(disk_.percent))}%"        
 
     def cpu_load(self):
-        return f"{int(pwnagotchi.cpu_load() * 100)}%"
+        cpu = psutil.cpu_percent()
+        return f"{(int(cpu))}%"
 
     def cpu_temp(self):
         if self.options['scale'] == "fahrenheit":
