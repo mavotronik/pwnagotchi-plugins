@@ -40,8 +40,8 @@ class clockie(plugins.Plugin):
         
         clockie_1 = self.client.subscribe("pwnagotchi/clockie_1")
         clockie_2 = self.client.subscribe("pwnagotchi/clockie_2")
-        ui.set('clock_mqtt_1', clockie_1)
-        ui.set('clock_mqtt_2', clockie_2)
+       # ui.set('clock_mqtt_1', clockie_1)
+       # ui.set('clock_mqtt_2', clockie_2)
         # remove_all()
         with ui._lock:
             ui.remove_element('memtemp')
