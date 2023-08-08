@@ -12,7 +12,7 @@
 
 # Dependencies
 ```
-sudo apt install mosquitto mosquitto-clients && sudo pip3 install paho-mqtt==1.4.0
+sudo apt install mosquitto mosquitto-clients && sudo pip3 install paho-mqtt==1.4.0 requests==1.21.0
 ```
 
 # Config.toml
