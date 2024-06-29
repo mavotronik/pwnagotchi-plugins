@@ -4,6 +4,7 @@ import pwnagotchi
 import os
 import logging
 import subprocess
+import time
 
 class Hcxpcapngtool(plugins.Plugin):
 
@@ -17,15 +18,20 @@ class Hcxpcapngtool(plugins.Plugin):
     
     def on_loaded(self):
         logging.info("Hcxpcapngtool Plugin: loaded")
-        if os.path.exists(self.options['hc_folder']):
-            print("Hcxpcapngtool Plugin: hc directory is ok")
+        if os.path.exists("/root/hc"):
+            logging.info("Hcxpcapngtool Plugin: [/root/hc] directory is ok")
         else:
-            print("Hcxpcapngtool Plugin: Creating hc dierectory . . .")
-            subprocess.run(('sudo mkdir ' + self.options['hc_folder']), shell=True, stdout=subprocess.PIPE)
+            logging.info("Hcxpcapngtool Plugin: Creating [/root/hc] dierectory . . .")
+            subprocess.run(('sudo mkdir /root/hc'), shell=True, stdout=subprocess.PIPE)
+        time.sleep(10)
+        logging.info("Hcxpcapngtool Plugin: Trying to convert .pcap-s")
+        subprocess.run(('cd /root/handshakes && for f in *.pcap; do hcxpcapngtool "$f" -o "/root/hc/${f%.pcap}.hc22000"; done'), shell=True, stdout=subprocess.PIPE)
 
+    
     def on_unloaded(self):
         logging.info("Hcxpcapngtool Plugin: unloaded")
 
     def on_handshake(self, agent, filename, access_point, client_station):
-        logging.info("Hcxpcapngtool Plugin: New handshake " + filename + " captured!")
+        logging.info("Hcxpcapngtool Plugin: New handshake " + filename + " captured! Converting . . .")
+        #subprocess.run((f'hcxpcapngtool {filename} -o "/root/hc/${f%.pcap}.hc22000"'))
         
