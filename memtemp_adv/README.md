@@ -8,7 +8,7 @@
 
 # Memtemp_adv Plugin
  - Displays CPU, RAM, disk usage, CPU temperature. Support waveshare v3  
- - Tested on 1.5.5 official version.
+ - Tested on 1.5.5 official version and 1.5.5FIX.
 
 # Dependencies
 
