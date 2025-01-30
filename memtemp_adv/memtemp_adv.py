@@ -104,7 +104,7 @@ class MemTemp(plugins.Plugin):
             elif ui.is_waveshare27inch():
                 h_pos = (192, 138)
                 v_pos = (211, 122)
-            elif ui.is_waveshare_v3():
+            elif ui.is_waveshare_v3() or ui.is_waveshare_v3():
                 h_pos = (178, 85)
                 y_pos = (197, 75)
             else:
