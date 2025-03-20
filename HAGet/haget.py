@@ -6,11 +6,6 @@ import pwnagotchi
 import logging
 import requests
 
-URL = ""
-TOKEN = ""
-ENTITIES = ""
-
-
 ######  PROJECT IS UNDER CONSTRUCTOIN!!!!!!! ##########
 
 class HaGet(plugins.Plugin):
@@ -33,4 +28,5 @@ class HaGet(plugins.Plugin):
         logging.info("HAGet: plugin unloaded.")
 
     def on_ui_update(self, ui):
+        
         logging.info("HAGet: ui updated.")
