@@ -13,16 +13,17 @@ class MemTemp(plugins.Plugin):
     __author__ = 'https://github.com/mavotronik/pwnagotchi-plugins'
     __version__ = '1.2.0'
     __license__ = 'MIT'
-    __description__ = 'A plugin that will display memory/cpu/disk usage and temperature'
+    __description__ = 'A plugin that will display memory/cpu/disk/swap usage and temperature'
 
     ALLOWED_FIELDS = {
         'mem': 'mem_usage',
         'cpu': 'cpu_load',
         'temp': 'cpu_temp',
         'freq': 'cpu_freq',
-        'disk': 'disk_usage'
+        'disk': 'disk_usage',
+        'swap': 'swap_usage'
     }
-    DEFAULT_FIELDS = ['mem', 'cpu', 'temp', 'disk']
+    DEFAULT_FIELDS = ['mem', 'cpu', 'temp', 'disk', 'swap']
     LINE_SPACING = 10
     LABEL_SPACING = 0
     FIELD_WIDTH = 4
@@ -36,7 +37,11 @@ class MemTemp(plugins.Plugin):
         
     def disk_usage(self):
         disk_ = psutil.disk_usage('/')
-        return f"{(int(disk_.percent))}%"        
+        return f"{(int(disk_.percent))}%"
+
+    def swap_usage(self):
+        swap = psutil.swap_memory()
+        return f"{(int(swap.percent))}%"
 
     def cpu_load(self):
         cpu = psutil.cpu_percent()
@@ -104,7 +109,7 @@ class MemTemp(plugins.Plugin):
             elif ui.is_waveshare27inch():
                 h_pos = (192, 138)
                 v_pos = (211, 122)
-            elif ui.is_waveshare_v3() or ui.is_waveshare_v3():
+            elif ui.is_waveshare_v3() or ui.is_waveshare_v4():
                 h_pos = (178, 85)
                 y_pos = (197, 75)
             else:
