@@ -20,7 +20,7 @@ sudo pip3 install pyserial==3.5
 main.plugins.ABM.enabled = true
 main.plugins.ABM.port = "/dev/ttyS0"
 main.plugins.ABM.baudrate = 9600
-main.plugins.ABM.mode_to_show = "percent"
+main.plugins.ABM.mode_to_show = "percent"  # percent - show percentage, voltage - shows voltage off battery
 main.plugins.ABM.pos_text = "150, 74"
 main.plugins.ABM.pos_data = "180, 75"
 ```
