@@ -38,7 +38,7 @@ class ABM(plugins.Plugin):
         raw_data = self.get_data()
 
         if not raw_data:
-            logging.warning("ABM: No data received, skipping update")
+            # logging.warning("ABM: No data received, skipping update")
             return
         
         voltage = raw_data[0]
@@ -74,7 +74,7 @@ class ABM(plugins.Plugin):
             data = [item.strip() for item in line]
 
             if len(data) != 5:
-                logging.warning(f"ABM: Incomplete data received: {data}")
+                # logging.warning(f"ABM: Incomplete data received: {data}")
                 return
         
             # logging.info(f"ABM: Raw data: {data}")
