@@ -28,7 +28,7 @@ class ABM(plugins.Plugin):
         self.serial.baudrate = self.baudrate
 
     def on_ui_setup(self, ui):
-        logging.info("ABM: on_ui_setup called")
+        # logging.info("ABM: on_ui_setup called")
         ui.add_element(f"text", Text(color=BLACK, value="BATT:", position=(self.pos_text[0], self.pos_text[1]), font=fonts.Small))
         ui.add_element(f"data", Text(color=BLACK, value="-", position=(self.pos_data[0], self.pos_data[1]), font=fonts.Small))
     
@@ -51,7 +51,7 @@ class ABM(plugins.Plugin):
             percents = self.batt_to_percent(float(voltage))
             data_to_display = f"{percents:.0f}% | {'CH' if charge_status == '1' else 'DCH'}"
 
-        logging.info(f"ABM: data to show {data_to_display}")
+        # logging.info(f"ABM: data to show {data_to_display}")
         ui.set("data", data_to_display)
 
     def on_unload(self, ui):
