@@ -7,7 +7,7 @@
 5. Restart pwnagotchi service
 
 # ABM
-- Displays any data from your Home Assistant
+- Displays data about charge from arduino
 - Tested on 1.5.5
 
 # Dependencies
