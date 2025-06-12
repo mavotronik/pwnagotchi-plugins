@@ -83,7 +83,7 @@ class ABM(plugins.Plugin):
         except Exception as e: 
             logging.error(f"ABM: Err: {e}")
 
-    def batt_to_percent(self, value, in_min=3.0, in_max=4.2, out_min=0, out_max=100):
+    def batt_to_percent(self, value, in_min=3.3, in_max=4.2, out_min=0, out_max=100):
         
         if value < in_min:
             value = in_min
